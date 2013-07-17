@@ -1,0 +1,20 @@
+<% content_for :title do %>Home Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Citibike Stations" data-text="near to StreetEasy" data-moreinfo="(You can drag the widgets around)"></div>
+    </li>
+    <% @stations.each_with_index do |station, index| %>
+      <li data-row="2" data-col="<%= index + 1 %>" data-sizex="1" data-sizey="1">
+        <div data-id="station_<%= station.id %>" data-view="Meter"
+          data-title="<%= station.label %>"
+          data-min="0"
+          data-max="<%= station.availableDocks + station.availableBikes %>"
+          data-value="<%= station.availableBikes %>"
+          data-moreinfo="# of docks available: <%= station.availableDocks %>"
+        >
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
