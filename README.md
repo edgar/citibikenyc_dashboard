@@ -1,6 +1,6 @@
 # CitibikeNYC Dashboard
 
-A simple dashboard that display the status for selected CitibikeNYC stations. Check the [live demo](http://se-citibike.herokuapp.com) for the stations near to [StreetEasy](http://streeteasy.com).
+A simple dashboard that display the status for selected CitibikeNYC stations. Check out the [live demo](http://se-citibike.herokuapp.com) for the stations near to [StreetEasy](http://streeteasy.com).
 
 Developed using [Dashing](http://shopify.github.com/dashing) and [Citibikenyc ruby gem](http://github.com/edgar/citibikenyc).
 
