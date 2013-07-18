@@ -16,7 +16,7 @@ And then start the server with:
 
     $ foreman start
 
-If you host your dashboard on Heroku, you will need to create a config var:
+If your dashboard is hosted on Heroku, you will need to create a config var:
 
     $ heroku config:add CITIBIKE_NEARBY_STATIONS="268,257,2010" -a <my heroku app>
 
