@@ -2,7 +2,7 @@
 <div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Citibike Stations" data-text="near to StreetEasy" data-moreinfo="(You can drag the widgets around)"></div>
+      <div data-id="welcome" data-view="Text" data-title="Citibike Stations" data-text="near to StreetEasy" data-moreinfo="Developed by <a href='http://edgar.com.ve'>Edgar</a> using <a hef='http://github.com/Shopify/dashing'>Dashing</a> and <a href='http://github.com/edgar/citibikenyc'>Citibikenyc ruby gem</a><br/>Check out <a href='http://github.com/edgar/citibikenyc_dashboard'>the code in github</a>"></div>
     </li>
     <% @stations.each_with_index do |station, index| %>
       <li data-row="2" data-col="<%= index + 1 %>" data-sizex="1" data-sizey="1">
@@ -17,5 +17,5 @@
       </li>
     <% end %>
   </ul>
-  <center><div style="font-size: 12px">Developed by <a href="http://edgar.com.ve">Edgar</a> using <a hef="http://github.com/Shopify/dashing">Dashing</a> and <a href="http://github.com/edgar/citibikenyc">Citibikenyc ruby gem</a></div></center>
+  <center><div style="font-size: 12px"></div></center>
 </div>
