@@ -18,11 +18,6 @@ before '/citibike' do
   @stations = all_stations.select{|station| settings.nearby_stations.include?(station.id) }
 end
 
-before '/mobile' do
-  all_stations = Citibikenyc.stations.results
-  @stations = all_stations.select{|station| settings.nearby_stations.include?(station.id) }
-end
-
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
