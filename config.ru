@@ -2,8 +2,8 @@ require 'dashing'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
-
   set :nearby_stations, ENV['CITIBIKE_NEARBY_STATIONS'].split(',').map{|id| id.to_i}
+  set :default_dashboard, 'citibike'
 
   helpers do
     def protected!
@@ -14,6 +14,11 @@ configure do
 end
 
 before '/citibike' do
+  all_stations = Citibikenyc.stations.results
+  @stations = all_stations.select{|station| settings.nearby_stations.include?(station.id) }
+end
+
+before '/mobile' do
   all_stations = Citibikenyc.stations.results
   @stations = all_stations.select{|station| settings.nearby_stations.include?(station.id) }
 end

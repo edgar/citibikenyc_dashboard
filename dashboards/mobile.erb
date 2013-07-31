@@ -1,0 +1,24 @@
+<% content_for :title do %>Home Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Citibike Stations" data-text="near to StreetEasy" data-moreinfo=""></div>
+    </li>
+    <% row = 2 %>
+    <% @stations.each_with_index do |station, index| %>
+      <% column = (index % 2) + 1 %>
+      <li data-row="<%= row %>" data-col="<%= column %>" data-sizex="1" data-sizey="1">
+        <div data-id="station_<%= station.id %>" data-view="Meter"
+          data-title="<%= station.label %>"
+          data-min="0"
+          data-max="<%= station.availableDocks + station.availableBikes %>"
+          data-value="<%= station.availableBikes %>"
+          data-moreinfo="# of docks available: <%= station.availableDocks %>"
+        >
+        </div>
+      </li>
+      <% row += 1 if column == 2 %>
+    <% end %>
+  </ul>
+  <center><div style="font-size: 12px">Created by <a href='http://twitter.com/edgar' rel='author'>@edgar</a> - <a href='http://edgar.com.ve' rel='author'>http://edgar.com.ve</a></div></center>
+</div>
