@@ -16,7 +16,16 @@ And then start the server with:
 
     $ foreman start
 
-If your dashboard is hosted on Heroku, you will need to create a config var:
+When hosting on [OpenShift](http://openshift.github.io/), you can set your list of station ids by including the additional evironment variables as part of your app creation step:
+
+    rhc app create citibikes ruby-1.9 --env CITIBIKE_NEARBY_STATIONS="268,257,2010" --from-code=https://github.com/edgar/citibikenyc_dashboard.git
+
+Or, update an existing OpenShift-hosted application clone with new list of station ids:
+
+    rhc env set CITIBIKE_NEARBY_STATIONS="268,257,2010" -a citibikes
+    rhc app restart # to load the new station list
+
+For applications hosted on Heroku, your nearby station ids can be configured like this:
 
     $ heroku config:add CITIBIKE_NEARBY_STATIONS="268,257,2010" -a <my heroku app>
 
