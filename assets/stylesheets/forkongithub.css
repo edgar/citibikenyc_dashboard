@@ -2,7 +2,7 @@
   z-index:10;
 }
 #forkongithub a{
-  background:green;
+  background:red;
   color:#fff;
   text-decoration:none;
   font-family:arial, sans-serif;
@@ -15,7 +15,7 @@
   transition:0.5s;
 }
 #forkongithub a:hover{
-  background:#060;
+  background:black;
   color:#fff;
 }
 #forkongithub a::before,#forkongithub a::after{
